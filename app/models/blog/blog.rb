@@ -22,8 +22,8 @@ class Blog::Blog < Wheelhouse::Resource
     Blog::BlogHandler
   end
   
-  def find_post(year, month, permalink)
-    posts.find_by_year_and_month_and_permalink!(year.to_i, month.to_i, permalink)
+  def find_post(permalink)
+    posts.find_by_permalink!(permalink)
   end
   
   def feed_path

@@ -35,6 +35,11 @@ class Blog::BlogHandler < Wheelhouse::ResourceHandler
     @post = @blog.find_post(params[:year], params[:month], params[:permalink])
     render @post
   end
+  
+  get "/:permalink", :cache => true do
+    @post = @blog.find_post(params[:permalink])
+    render @post
+  end
 
 private
   def paginate(posts)

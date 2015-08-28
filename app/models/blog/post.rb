@@ -51,7 +51,7 @@ class Blog::Post < Wheelhouse::Resource
   end
   
   def path
-    blog.path(published_at.year, published_at.month, permalink)
+    blog.path(permalink)
   end
   
   def author_name
